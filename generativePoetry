@@ -1,0 +1,46 @@
+// Generative Art - Poetry 
+// This project was inspired by by mtchl on open processing n.d. that Dave Ritter 
+
+// Replace each art with definite, and indefinite articles. 
+//Note quotes and commas.
+let articles = ["art0", "art1", "art2", "art3", "art4"];
+
+// Replace each adj with an adjective. 
+//Note quotes and commas.
+let adjectives = ["adj0", "adj1", "adj2", "adj3", "adj3"];
+
+// Replace each noun with your own. 
+//Note quotes and commas.
+let nouns = ["noun0", "noun1", "noun2", "noun3", "noun4"];
+
+// Replace each verb with your verb. 
+// Note quotes and commas.
+let verbs = ["verb0", "verb1", "verb2", "verb3", "verb4"];
+
+// preload the font that we will use 
+function preload() {
+  Roboto = loadFont("Roboto-Black.ttf");
+}
+
+function setup() {
+  createCanvas(400, 400);
+  noLoop();
+  textFont(Roboto, 48);
+}
+
+function draw() {
+  background(255, 255, 100);
+// Now we can use random() to pick a random word from each array!
+  var rnd_adjective = random(adjectives);
+  var rnd_noun = random(nouns);
+  var rnd_verb = random(verbs);
+
+  text("the", 50, 100);
+  text(rnd_adjective, 50, 150);
+  text(rnd_noun, 50, 200);
+  text(rnd_verb, 50, 250);
+}
+
+function mousePressed() {
+  draw();
+}
